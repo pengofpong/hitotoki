@@ -129,3 +129,14 @@ html{scroll-behavior:smooth}
 .accessible-pairings[data-vision="tritanopia"] .accessible-pair-sample{filter:url(#hitotoki-tritanopia)}
 .accessible-pairings[data-vision="achromatopsia"] .accessible-pair-sample{filter:grayscale(1)}
 @media(max-width:700px){.accessible-pairings{grid-template-columns:1fr}}
+
+/* v16 — five always-visible vision mode tabs */
+.accessible-controls{display:block;margin:24px 0}
+.accessible-controls-title{display:block;font-size:13px;font-weight:700;margin-bottom:12px}
+.vision-mode-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid #c7d1e0;gap:0}
+.vision-mode-tab{font:600 12px Gabarito,sans-serif;min-width:0;padding:15px 8px;border:0;border-right:1px solid #c7d1e0;background:#f4f7fa;color:var(--night);text-align:center;cursor:pointer}
+.vision-mode-tab:last-child{border-right:0}
+.vision-mode-tab:hover{background:var(--lunar)}
+.vision-mode-tab[aria-pressed="true"]{background:var(--night);color:var(--lunar)}
+.vision-mode-tab:focus-visible{outline:3px solid var(--day);outline-offset:-3px;position:relative;z-index:1}
+@media(max-width:700px){.vision-mode-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.vision-mode-tab{border-bottom:1px solid #c7d1e0}.vision-mode-tab:last-child{grid-column:span 2;border-bottom:0}}
